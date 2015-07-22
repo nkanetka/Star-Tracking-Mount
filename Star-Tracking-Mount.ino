@@ -1,52 +1,88 @@
 #include <SoftwareSerial.h>
 #include <Stepper.h>
 
-int delayLength = 500;// 30
+int delayLength = 30;// 30
+int reverseLength = 3;
+int chA = 12; // setting the Channel A pin
+int chB = 13; // setting the Channel B pin
+int brakeA = 9; // setting the brake for channel A
+int brakeB = 8; // setting the brake for channel B
+bool reverse = true;
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(12, OUTPUT);
-  pinMode(13, OUTPUT);
+  pinMode(chA, OUTPUT);
+  pinMode(chB, OUTPUT);
   
-  pinMode(9, OUTPUT);
-  pinMode(8, OUTPUT);
+  pinMode(brakeA, OUTPUT);
+  pinMode(brakeB, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  if (reverse) {
+    backward();
+  } else {
+    forward();
+  }
+}
+
+void forward() {
   // 1
-  digitalWrite(9, LOW);
-  digitalWrite(8, HIGH);
-  
-  digitalWrite(12, HIGH);
-  analogWrite(3, 255);
-  
-  delay(delayLength);
-  
-  // 3
-  digitalWrite(9, LOW);
-  digitalWrite(8, HIGH);
-  
-  digitalWrite(12, LOW);
-  analogWrite(3, 255);
-  
-  delay(delayLength);
-  
-  // 4
-  digitalWrite(9, HIGH);
-  digitalWrite(8, LOW);
-  
-  digitalWrite(13, HIGH);
-  analogWrite(11, 255);
-  
-  delay(delayLength);
-  
-  // 2
-  digitalWrite(9, HIGH);
-  digitalWrite(8, LOW);
-  
-  digitalWrite(13, LOW);
-  analogWrite(11, 255);
-  
-  delay(delayLength);
+   digitalWrite(brakeA, LOW);
+   digitalWrite(brakeB, HIGH);
+   digitalWrite(chB, HIGH);
+   analogWrite(3, 255);
+   delay(delayLength);
+   
+ // 2
+   digitalWrite(brakeA, LOW);
+   digitalWrite(brakeB, HIGH);
+   digitalWrite(chB, LOW);
+   analogWrite(3, 255);
+   delay(delayLength);
+   
+ // 3
+   digitalWrite(brakeA, HIGH);
+   digitalWrite(brakeB, LOW);
+   digitalWrite(chA, HIGH);
+   analogWrite(11, 255);
+   delay(delayLength);
+
+ // 4
+   digitalWrite(brakeA, HIGH);
+   digitalWrite(brakeB, LOW);
+   digitalWrite(chA, LOW);
+   analogWrite(11, 255);
+   delay(delayLength);
+}
+
+void backward() {
+  // 1
+   digitalWrite(brakeA, LOW);
+   digitalWrite(brakeB, HIGH);
+   digitalWrite(chB, LOW);
+   analogWrite(3, 255);
+   delay(reverseLength);
+   
+ // 2
+   digitalWrite(brakeA, LOW);
+   digitalWrite(brakeB, HIGH);
+   digitalWrite(chB, HIGH);
+   analogWrite(3, 255);
+   delay(reverseLength);
+   
+ // 3
+   digitalWrite(brakeA, HIGH);
+   digitalWrite(brakeB, LOW);
+   digitalWrite(chA, LOW);
+   analogWrite(11, 255);
+   delay(reverseLength);
+
+ // 4
+   digitalWrite(brakeA, HIGH);
+   digitalWrite(brakeB, LOW);
+   digitalWrite(chA, HIGH);
+   analogWrite(11, 255);
+   delay(reverseLength);
 }
