@@ -1,13 +1,13 @@
 #include <SoftwareSerial.h>
 #include <Stepper.h>
 
-int delayLength = 30;// 30
-int reverseLength = 3;
+int delayLength = 451; // In microseconds 450721
+int reverseLength = 300; // In seconds
 int chA = 12; // setting the Channel A pin
 int chB = 13; // setting the Channel B pin
 int brakeA = 9; // setting the brake for channel A
 int brakeB = 8; // setting the brake for channel B
-bool reverse = true;
+bool reverse = false;
 
 void setup() {
   // put your setup code here, to run once:
