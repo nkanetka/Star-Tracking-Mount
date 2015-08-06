@@ -22,3 +22,9 @@ Overview of the motor assembly, with both dowels, to allow for rotation of the t
 
 Mount with camera set up ontop.
 <img src="https://github.com/nkanetka/Star-Tracking-Mount/blob/master/Images/thumb_IMG_0197_1024.jpg" width="450px" height="600px" />
+
+### To Do
+1. Work on tweaking the correct speed of the motor.
+2. Implement a control for the motor using the Bluetooth shield
+..* Test using an LED or something first then scale up to the motor.
+..* Test with an Android as Apple requires a MFi developer account.

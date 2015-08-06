@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 #include <Stepper.h>
 
-int delayLength = 451; // In microseconds 450721
+int delayLength = 1353; // In microseconds 450721
 int reverseLength = 300; // In seconds
 int chA = 12; // setting the Channel A pin
 int chB = 13; // setting the Channel B pin
