@@ -26,5 +26,5 @@ Mount with camera set up ontop.
 ### To Do
 1. Work on tweaking the correct speed of the motor.
 2. Implement a control for the motor using the Bluetooth shield
-..* Test using an LED or something first then scale up to the motor.
-..* Test with an Android as Apple requires a MFi developer account.
+    - Test using an LED or something first then scale up to the motor.
+    - Test with an Android as Apple requires a MFi developer account.
