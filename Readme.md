@@ -18,9 +18,11 @@ The star tracking mount is used to reduce the amount of star trails when taking 
 This project is still a work in progress but below are some photos of the implementation.
 
 Overview of the motor assembly, with both dowels, to allow for rotation of the threaded rod.
+
 <img src="https://github.com/nkanetka/Star-Tracking-Mount/blob/master/Images/thumb_IMG_0181_1024.jpg" width="450px" height="600px" />
 
 Mount with camera set up ontop.
+
 <img src="https://github.com/nkanetka/Star-Tracking-Mount/blob/master/Images/thumb_IMG_0197_1024.jpg" width="450px" height="600px" />
 
 ### To Do
